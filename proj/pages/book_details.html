@@ -1,0 +1,86 @@
+<div ng-controller="book_details" ><!--Controller div starts-->
+
+
+  <h4>The selected book details</h4>
+
+	<div ng-show="disp" class="form"><!-- editable starts -->
+
+      <form class="form-horizontal">
+
+          <div class="form-group">
+			         <label for="inputISBN" class="col-sm-2 control-label">ISBN Number. :</label>
+			            <div class="col-sm-6">
+				                <input type="text" ng-model="book.isbn" class="form-control" id="inputISBN" placeholder="{{book.isbn}}">
+			            </div>
+		      </div>
+
+          <div class="form-group">
+			         <label for="inputISBN" class="col-sm-2 control-label">Title :</label>
+			            <div class="col-sm-6">
+				                <input type="text" ng-model="book.title" class="form-control" id="inputISBN" placeholder="{{book.title}}">
+			            </div>
+		      </div>
+
+          <div class="form-group">
+			         <label for="inputISBN" class="col-sm-2 control-label">Author. :</label>
+			            <div class="col-sm-6">
+				                <input type="text" ng-model="book.author" class="form-control" id="inputISBN" placeholder="{{book.author}}">
+			            </div>
+		      </div>
+
+          <div class="form-group">
+			         <label for="inputISBN" class="col-sm-2 control-label">Price. :</label>
+			            <div class="col-sm-6">
+				                <input type="text" ng-model="book.price" class="form-control" id="inputISBN" placeholder="{{book.price}}">
+			            </div>
+		      </div>
+
+          <div class="form-group">
+			         <label for="inputAvailability" class="col-sm-2 control-label">Available On :</label>
+			            <div class="checkbox-inline">
+				                <label ng-repeat="cb in book.availableOn" class="col-sm-6">
+				                      <input type="checkbox" ng-click="chkSelected(cb)" ng-checked = "true" value="{{cb}}">
+				                          {{cb}}
+                				</label>
+			            </div>
+		      </div>
+
+		</form>
+
+  </div><!-- editable ends -->
+
+	<div ng-show="!disp" class="info">
+	     <form class="form-horizontal">
+		        <div>
+			          <label for="inputISBN" >ISBN Number. :</label>
+			          <span ng-bind="book.isbn"></span>
+		        </div>
+		        <div>
+			          <label for="inputISBN" >TITLE. :</label>
+			          <span ng-bind="book.title"></span>
+		        </div>
+		        <div>
+			          <label for="inputISBN" >Author. :</label>
+			          <span ng-bind="book.author"></span>
+		        </div>
+		        <div>
+			          <label for="inputISBN" >Price. :</label>
+			          <span ng-bind="book.price"></span>
+		        </div>
+		          <div>
+			          <label for="inputISBN" >Available on. :</label>
+			          <span ng-bind="book.availableOn"></span>
+		          </div>
+		    </form>
+  </div>
+
+
+      <div class="modal-footer">
+          <a class="btn btn-default" href="#/">HOME</a>
+          <button type="button" class="btn btn-default" ng-show="disp" ng-click="editBook(book)" >UPDATE</button>
+          <button type="button" class="btn btn-default" id="editbutton" ng-click="disp=!disp">EDIT</button>
+          <button type="button" class="btn btn-default" value="Delete" ng-click="deleteBook(book)" >DELETE</button>
+
+      </div>
+
+	</div><!--Controller div ends-->

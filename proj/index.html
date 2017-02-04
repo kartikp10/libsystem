@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <!--- Scripts from folder -->
+    <script src="scripts/module.js"></script>
+    <script src="scripts/getbooks.js"></script>
+    <script src="scripts/author_details.js"></script>
+    <script src="scripts/book_details.js"></script>
+
+    <script src="scripts/add-book.js"></script>
+    <style media="screen">
+
+      body, .view-div{
+        margin: 0 auto;
+       text-align: center;
+        width: 70%;
+        margin-top: 1em;
+      }
+      .form-custom{
+        padding: 1em;
+        background-color: rgba(167, 167, 167, 0.39);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+
+    <h4>Library Management System</h4>
+
+
+
+    <div class="view-div" ng-view>
+    </div>
+
+  </div><!-- Container Ends -->
+
+
+
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<div ng-controller="myController">
+  <a href="#/addBook" class="btn btn-default">Add New Book</a>
+  <a href="#/addAuthor" class="btn btn-default">Add New Author</a>
+  <br>
+  <br>
+  <form class="form-group">
+    <input type="search" name="search" class="form-control" placeholder="Search.." ng-model="search_text">
+  </form>
+  <br>
+  <table class="table table-responsive table-hover table-bordered">
+    <tr>
+      <thead>
+        <th>ISBN number</th>
+        <th>Title</th>
+        <th>Author</th>
+      </thead>
+
+    </tr>
+      <tr ng-repeat="book in bookdata | filter : search_text">
+          <td><a ng-href="#/isbnclick?{{book.isbn}}">{{book.isbn}}</a></td>
+					<td>{{book.title}}</td>
+					<td><a ng-href="#/authorclick?{{book.author}}">{{book.author}}</a></td>
+      </tr>
+  </table>
+
+
+</div>
